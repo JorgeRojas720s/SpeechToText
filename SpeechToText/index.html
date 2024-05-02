@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text to Speech</title>
+    <script src="/speech.js"></script>
+   
+  </head>
+  <body>
+    <h1 class="title">Text to Speech</h1>
+    <section class="options-write">
+      <div id="microphoneButtons" class="microphoneButtons" style="display: block;">
+        <p>To talk</p>
+        <button class="start-btn" id="start-btn">Start</button>
+        <button class="stop-btn" id="stop-btn">Stop</button>
+      </div>
+      <div>
+        <button class="clear-btn" onclick="clearTextArea()">Clear</button>
+      </div>
+    </section>
+    <p id="output" style="display: none; color: #fff">Say something...</p>
+    <section>
+      <textarea
+        class="textArea"
+        id="text"
+        rows="10"
+        cols="70"
+        placeholder="Write here...."
+      ></textarea>
+      <section class="options">
+        <div>
+          <div class="voice-speed">
+            <p>Voice speed: </p>
+            <p id="numberSpeed">1</p>
+          </div>
+          <input
+            class="voice-speed-bar"
+            type="range"
+            id="speed"
+            min="0.5"
+            max="2"
+            value="1"
+            step="0.1"
+          />
+        </div>
+        <div class="select-language">
+          <p>
+            Select the language:
+            <select class="language-options" id="language"></select>
+          </p>
+        </div>
+      </section>
+      <button class="convert-btn" onclick="textToVoice()">
+        Convert to Voice
+      </button>
+    </section>
+  </body>
+</html>
